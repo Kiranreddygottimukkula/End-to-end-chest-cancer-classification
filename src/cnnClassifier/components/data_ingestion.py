@@ -1,9 +1,11 @@
 import os
+import urllib.request as request
 import zipfile
 import gdown
 from cnnClassifier import logger
 from cnnClassifier.utils.common import get_size
 from cnnClassifier.entity.config_entity import DataIngestionConfig
+from pathlib import Path
 
 
 class DataIngestion:
@@ -12,7 +14,6 @@ class DataIngestion:
 
 
     
-     
     def download_file(self)-> str:
         '''
         Fetch data from the url
@@ -31,8 +32,9 @@ class DataIngestion:
             logger.info(f"Downloaded data from {dataset_url} into file {zip_download_dir}")
 
         except Exception as e:
-            raise e
-        
+            raise e  
+
+
     
     def extract_zip_file(self):
         """
@@ -44,5 +46,4 @@ class DataIngestion:
         os.makedirs(unzip_path, exist_ok=True)
         with zipfile.ZipFile(self.config.local_data_file, 'r') as zip_ref:
             zip_ref.extractall(unzip_path)
-
 

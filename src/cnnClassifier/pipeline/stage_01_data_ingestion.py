@@ -3,7 +3,6 @@ from cnnClassifier.components.data_ingestion import DataIngestion
 from cnnClassifier import logger
 
 
-
 STAGE_NAME = "Data Ingestion stage"
 
 class DataIngestionTrainingPipeline:
@@ -29,3 +28,4 @@ if __name__ == '__main__':
     except Exception as e:
         logger.exception(e)
         raise e
+

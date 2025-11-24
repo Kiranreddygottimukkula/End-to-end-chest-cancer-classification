@@ -1,4 +1,4 @@
-# End-to-End-Chest-Cancer-Classification-using-MLflow-DVC
+# Kidney-Disease-Classification-MLflow-DVC
 
 
 ## Workflows
@@ -14,38 +14,40 @@
 9. Update the dvc.yaml
 
 
+# How to run?
+### STEPS:
 
-
-
-## MLflow
-
-- [Documentation](https://mlflow.org/docs/latest/index.html)
-
-- [MLflow tutorial](https://youtube.com/playlist?list=PLkz_y24mlSJZrqiZ4_cLUiP0CBN5wFmTb&si=zEp_C8zLHt1DzWKK)
-
-##### cmd
-- mlflow ui
-
-### dagshub
-[dagshub](https://dagshub.com/)
-
-MLFLOW_TRACKING_URI=https://dagshub.com/entbappy/chest-Disease-Classification-MLflow-DVC.mlflow \
-MLFLOW_TRACKING_USERNAME=entbappy \
-MLFLOW_TRACKING_PASSWORD=6824692c47a4545eac5b10041d5c8edbcef0 \
-python script.py
-
-Run this to export as env variables:
+Clone the repository
 
 ```bash
+https://github.com/entbappy/Kidney-Disease-Classification-MLflow-DVC
+```
+### STEP 01- Create a conda environment after opening the repository
 
-export MLFLOW_TRACKING_URI=https://dagshub.com/entbappy/chest-Disease-Classification-MLflow-DVC.mlflow
-
-export MLFLOW_TRACKING_USERNAME=entbappy 
-
-export MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9353c5b10041d5c8edbcef0
-
+```bash
+conda create -n cnncls python=3.8 -y
 ```
 
+```bash
+conda activate cnncls
+```
+
+
+### STEP 02- install the requirements
+```bash
+pip install -r requirements.txt
+```
+
+
+```bash
+# Finally run the following command
+python app.py
+```
+
+Now,
+```bash
+open up you local host and port
+```
 
 
 ### DVC cmd
@@ -55,21 +57,33 @@ export MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9353c5b10041d5c8edbcef0
 3. dvc dag
 
 
-## About MLflow & DVC
+## MLflow
 
-MLflow
-
- - Its Production Grade
- - Trace all of your expriements
- - Logging & taging your model
+[Documentation](https://mlflow.org/docs/latest/index.html)
 
 
-DVC 
+##### cmd
+- mlflow ui
 
- - Its very lite weight for POC only
- - lite weight expriements tracker
- - It can perform Orchestration (Creating Pipelines)
+### dagshub
+[dagshub](https://dagshub.com/)
 
+MLFLOW_TRACKING_URI=https://dagshub.com/entbappy/MLflow-DVC-Chicken-Disease-Classification.mlflow 
+MLFLOW_TRACKING_USERNAME=entbappy 
+MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0 
+python script.py
+
+Run this to export as env variables:
+
+```bash
+
+export MLFLOW_TRACKING_URI=https://dagshub.com/entbappy/MLflow-DVC-Chicken-Disease-Classification.mlflow
+
+export MLFLOW_TRACKING_USERNAME=entbappy 
+
+export MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0 
+
+```
 
 
 # AWS-CICD-Deployment-with-Github-Actions
@@ -145,4 +159,22 @@ DVC
 
     ECR_REPOSITORY_NAME = simple-app
 
-	done 
+
+
+
+
+
+## About MLflow & DVC
+
+MLflow
+
+ - Its Production Grade
+ - Trace all of your expriements
+ - Logging & taging your model
+
+
+DVC 
+
+ - Its very lite weight for POC only
+ - lite weight expriements tracker
+ - It can perform Orchestration (Creating Pipelines)
